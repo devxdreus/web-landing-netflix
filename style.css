@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: #eee;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+}
+
+header .logo {
+  max-width: 160px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu li {
+  list-style: none;
+  margin: 0 1rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.nav-menu a:hover {
+  color: #de0611;
+}
+
+.nav-search {
+  position: relative;
+}
+
+.nav-search input {
+  background-color: transparent;
+  color: #fff;
+  padding: .6rem .6rem .6rem 2.8rem;
+  outline: none;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 4px;
+  backdrop-filter: blur(10px);
+}
+
+.nav-search input::placeholder {
+  color: #fff;
+}
+
+.nav-search i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  padding-right: 10px;
+  color: #fff;
+  border-right: 1px solid #fff;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.bg::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.bg img {
+  object-fit: cover;
+}
+
+.banner {
+  max-width: 550px;
+  margin: 4rem 4rem;
+}
+
+.banner .title {
+  width: 250px;
+}
+
+.banner h4 {
+  font-weight: 500;
+  color: #aaa;
+}
+
+.banner h4 span {
+  padding: 0 1rem;
+  border-right: 1px solid #aaa;
+}
+
+.banner h4 span:first-child {
+  padding-left: 0;
+}
+
+.banner h4 span:last-child {
+  border-right: 0;
+}
+
+.banner h4 i {
+  display: inline-block;
+  padding: 0px 8px;
+  background-color: #de0611;
+  font-style: normal;
+  color: #eee;
+  border-radius: 2px;
+}
+
+.banner p {
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.5em;
+  margin: 10px 0 20px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px 24px;
+  background-color: #de0611;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-right: 1rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: .3s;
+}
+
+.btn:hover {
+  background-color: #be0710;  
+}
+
+.btn-dark {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.btn-dark:hover {
+  background-color: #be0710;
+}
+
+.play {
+  display: inline-block;
+  margin-top: 4rem;
+  font-size: 1.2em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.play img {
+  width: 42px;
+  margin-right: 1rem;
+}
+
+.play-btn {
+  display: flex;
+  align-items: center;
+}
+
+.trailer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(20px);
+  z-index: 9999;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.trailer.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.trailer video {
+  max-width: 900px;
+  outline: none;
+}
+
+.trailer .close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  filter: invert(1);
+  width: 32px;
+  cursor: pointer;
+}
+
+@media (max-width: 992px){
+  header {
+    flex-direction: column;
+    padding: 1rem 4rem;
+  }
+
+  .nav-menu {
+    margin: .6rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .banner {
+    margin: 2rem 6rem;
+  }
+
+  .trailer video {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px){
+
+}
+
+@media (max-width: 600px){
+  header {
+    padding: 1rem 3rem;
+  }
+
+  .banner {
+    margin: 2rem 1rem;
+  }
+
+  .banner .title {
+    width: 200px;
+  }
+
+  .banner h4, .banner p, .banner .button a, .play-btn span {
+    font-size: .9em;
+  }
+
+  .play {
+    margin-top: 2.5rem;
+  }
+
+  .nav-search, .nav-search input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
